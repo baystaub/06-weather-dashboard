@@ -38,6 +38,12 @@ ul {
     background-color: #212529;
 }
 
+#searchPage {
+    margin-left: 25%;
+    width: 50%, !important;
+    margin-right: 25%;
+}
+
 li {
     text-align: left;
     padding: 5px;
