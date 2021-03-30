@@ -1,10 +1,14 @@
 var searchButton = $(".searchButton");
 var apiKey = "40ad46380b6d8c16e4ee5168aa8adc07";
 var keyCount = 0;
+var todayTime = moment().format("h:mm:ss a")
+var datetime = null
+
+$("#Time").text(todayTime);
 
 for (var i = 0; i < localStorage.length; i++) {
     var city = localStorage.getItem(i);
-    var cityName = $(".list-group").addClass("list-group-item");
+    var cityName = $(".listGroup").addClass("listGroupItem");
     cityName.append("<li>" + city + "</li>");
 }
 searchButton.click(function() {
@@ -18,7 +22,7 @@ searchButton.click(function() {
                 return data.json();
             })
             .then(function(response) {
-                var cityName = $(".list-group").addClass("list-group-item");
+                var cityName = $(".listGroup").addClass("listGroupItem");
                 cityName.append("<li>" + response.name + "</li>");
                 localStorage.setItem(keyCount, response.name);
                 keyCount = keyCount + 1;
@@ -44,7 +48,7 @@ searchButton.click(function() {
                     .then(function(response) {
                         var currentUV = currentTemp
                             .append("<ol>" + "UV Index: " + response.value + "</ol>")
-                            .addClass("card-text indicator");
+                            .addClass("cardText indicator");
                         currentTemp.append(currentUV);
                         var UVindex = document.querySelector(".indicator");
                         if (response.value >= 8) {
@@ -79,3 +83,15 @@ searchButton.click(function() {
             });
         });
 });
+
+//updates the clock every second.
+$(document).ready(function() {
+    datetime = $('#Time')
+    update();
+    setInterval(update, 1000);
+});
+//sets the background for present,past,and future background
+var update = function() {
+    date = moment(new Date())
+    datetime.html(date.format('h:mm:ss a'));
+};
