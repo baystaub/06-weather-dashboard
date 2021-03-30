@@ -5,14 +5,14 @@
 }
 
 .display1 {
-    color: rgb(46, 206, 255);
-    font-size: 75px;
+    color: rgb(18, 204, 64);
+    font-size: 70px;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 #Time {
-    color: rgb(46, 206, 255);
+    color: rgb(18, 204, 64);
     font-size: 25px;
 }
 
@@ -36,7 +36,7 @@ ul {
 }
 
 .search {
-    color: white;
+    color: rgb(18, 204, 64);
     font-size: 20px;
     max-width: auto;
     background-color: #212529;
@@ -98,5 +98,5 @@ div.card {
 }
 
 #jumbotron {
-    background-color: #0d161f;
+    background-color: #041424;
 }
